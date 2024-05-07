@@ -1,3 +1,6 @@
+import random
+
+
 def start_game():
     print("*** Welcome to Curse of the Kraken's Tooth! ***")
     print("You awaken, shipwrecked on an uncharted island...")
@@ -23,7 +26,13 @@ def shipwreck_beach():  # Our first location
         print("Make up your mind, landlubber!") 
 
 def explore_jungle():
-    print("You venture into the dense undergrowth...")
+    encounters = [
+        "A grumpy monkey steals your hat!",
+        "You find a strange glowing flower...",
+        "A mysterious path leads deeper into the jungle..."
+    ] 
+        
+    print(random.choice(encounters))  # Pick a random encounter
 
 def explore_shore():
     print("You take a walk down the coast towards the shore...")
