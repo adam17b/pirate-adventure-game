@@ -1,5 +1,6 @@
 import random
 
+inventory = []
 
 def start_game():
     print("*** Welcome to Curse of the Kraken's Tooth! ***")
@@ -23,24 +24,26 @@ def shipwreck_beach():  #First location
         print("Make up your mind, landlubber!") 
 
 def explore_jungle():
-   # encounters = [
-   #     "A grumpy monkey steals your hat!",
-   #     "You find a strange glowing flower...",
-    #    "A mysterious path leads deeper into the jungle..."
-    #] 
+     
+    diceRoll = random.randint(1, 10) 
 
-    if random.randint(1, 10) < 11:  # Monkey appears (adjust probability)
+    if diceRoll <= 3:  # Monkey appears
         print("A grumpy monkey blocks your path, chattering angrily!") 
         choice = input("What do you do? (Try to Befriend / Intimidate / Run Away): ")
-           
+
         if choice.lower() == "befriend":
-            print("You cautiously offer it a piece of fruit...")  # Placeholder
+            print("You cautiously offer it a piece of fruit...")
+            if diceRoll >= 5:  # Check the initial diceRoll
+                print("The monkey has calmed down and offered you an old silver key!")
+                inventory.append("Old Key")
+            else:  # No need for diceRoll check here
+                print("The monkey has no interest in being your friend...")   
         elif choice.lower() == "intimidate":
-            print("You roar and wave your arms...")  # Placeholder 
+                print("You roar and wave your arms...")  # Placeholder 
         elif choice.lower() == "run away":
-            print("You turn and flee!")  # Placeholder 
+                print("You turn and flee!")  # Placeholder 
         else:
-            print("The monkey doesn't understand, it just screeches louder!") 
+                print("The monkey doesn't understand, it just screeches louder!") 
 
 
     # Placeholder for choices - we'll add those next
